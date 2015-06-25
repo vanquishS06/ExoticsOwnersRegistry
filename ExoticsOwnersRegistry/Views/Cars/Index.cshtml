@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ExoticsOwnersRegistry.Models.Car>
+
+<!-- 'C' indicates server side code -->
+@{
+    ViewBag.Title = "Index";
+    @ViewBag.Message;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.carID)</th>
+        <th>@Html.DisplayNameFor(model => model.showCaseCarPicture)</th>
+        <th>@Html.DisplayNameFor(model => model.carMaker.makeName)</th>
+        <th>@Html.DisplayNameFor(model => model.carModel.modelName)</th>
+        <th>@Html.DisplayNameFor(model => model.carSubModel.subModelName)</th>
+        <th>@Html.DisplayNameFor(model => model.VIN)</th>
+        <th>@Html.DisplayNameFor(model => model.carDetails)</th>
+        <th>@Html.DisplayNameFor(model => model.bHideCar)</th>
+        <th>@Html.DisplayNameFor(model => model.approvalStatus)</th>
+        <th>@Html.DisplayNameFor(model => model.TimeStamp)</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <!-- Attributes -->
+            <td>@Html.DisplayFor(modelItem => item.carID)</td>
+            <td>@Html.DisplayFor(modelItem => item.showCaseCarPicture)</td>
+            <td>@Html.DisplayFor(modelItem => item.carMaker.makeName)</td>
+            <td>@Html.DisplayFor(modelItem => item.carModel.modelName)</td>
+            <td>@Html.DisplayFor(modelItem => item.carSubModel.subModelName)</td>
+            <td>@Html.DisplayFor(modelItem => item.VIN)</td>
+            <!-- Display Car Details page: (Button - Action/Record ID - controller) -->
+            <td>@Html.ActionLink("Show", string.Format("Details/{0}", item.carID), "CarDetails")</td>
+            <td>@Html.DisplayFor(modelItem => item.bHideCar)</td>
+            <td>@Html.DisplayFor(modelItem => item.approvalStatus)</td>
+            <td>@Html.DisplayFor(modelItem => item.TimeStamp)</td>
+
+            <!-- Action menu links in 1 column -->
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.carID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.carID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.carID })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Comment CommentText="                                      Exotic car registry schema requirements&#xD;&#xA;&#xD;&#xA;1. A car is part of a Make, Model and submodel (i.e: Lambo Countach lp400S1)&#xD;&#xA;2. A car has a current owner&#xD;&#xA;3. A car can have many of Licence tags over time&#xD;&#xA;3.1 A tag can belong to many cars over time&#xD;&#xA;4. A car description is made of a single set of attribute details&#xD;&#xA;5. A car history is made of many Historical period of single ownership&#xD;&#xA;6. A car's information can be contrubuted by many submitters&#xD;&#xA;7. A car can have many awards&#xD;&#xA;8. A car can have many sales&#xD;&#xA;&#xD;&#xA;10. An owner can have many cars over time (TODO)&#xD;&#xA;">
+    <Position X="1.783" Y="0.542" Height="2.308" Width="4.892" />
+  </Comment>
+  <Class Name="ExoticsOwnersRegistry.Models.Car">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <AssociationLine Name="carDetails" Type="ExoticsOwnersRegistry.Models.CarDetails">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.104" Y="0.243" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAIAAACAAgCAiEACCAAAAQAAAAAAAAAAgEAAAAAIAgA=</HashCode>
+      <FileName>Models\DataTables\Car.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="owner" />
+      <Property Name="carDetails" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.CarDetails">
+    <Position X="4.25" Y="9" Width="1.75" />
+    <AssociationLine Name="car" Type="ExoticsOwnersRegistry.Models.Car">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.473" Y="0.252" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAABAAAAgCAAAABAIAAAAAAIAAAAAAAACKgQAAQACA=</HashCode>
+      <FileName>Models\DataTables\CarDetails.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="car" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.HistoryPeriod">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <AssociationLine Name="car" Type="ExoticsOwnersRegistry.Models.Car" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="8.747" />
+        <Point X="2.375" Y="8.747" />
+        <Point X="2.375" Y="7.593" />
+        <Point X="2.938" Y="7.593" Type="JumpStart" />
+        <Point X="3.104" Y="7.593" Type="JumpEnd" />
+        <Point X="3.75" Y="7.593" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAAABAAAAgAAgAAAACAAAAIAACAACAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\DataTables\HistoryPeriod.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="owner" />
+      <Property Name="car" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.LicenceTag">
+    <Position X="6.75" Y="8.5" Width="1.5" />
+    <AssociationLine Name="carList" Type="ExoticsOwnersRegistry.Models.Car">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.696" Y="0.099" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAiAAAAAAAQAAAAAAAAAAAAAAAAAAAgAACAAAAAA=</HashCode>
+      <FileName>Models\DataTables\LicenceTag.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="carList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.Owner">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAACAAAAAACACAAAAEgAACAAIAAA=</HashCode>
+      <FileName>Models\DataTables\Owner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.Submitter">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <AssociationLine Name="carList" Type="ExoticsOwnersRegistry.Models.Car" ManuallyRouted="true">
+      <Path>
+        <Point X="2" Y="11.031" />
+        <Point X="3.021" Y="11.031" />
+        <Point X="3.021" Y="6.702" />
+        <Point X="3.75" Y="6.702" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAQAAEAAAAAhAACAAAAAA=</HashCode>
+      <FileName>Models\DataTables\Submitter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="carList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.Models.Award">
+    <Position X="8.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAgABAACAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataTables\Awards.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.Auction">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAAAgAAAAgAAABAAAABAAAAAAAAAAAEQAAAAAA=</HashCode>
+      <FileName>Models\DataTables\Auction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.Models.Sale">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQBAAAAgAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataTables\Sale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.CarMaker">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAACAAAAACAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Models\DataTables\CarMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.CarModel">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAgAAAAAAAAAAACEIAAAACAAA=</HashCode>
+      <FileName>Models\DataTables\CarModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExoticsOwnersRegistry.Models.CarSubModel">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACACAAAAAAAAAAACAAAAAAAAAgAAAAAAAIAA=</HashCode>
+      <FileName>Models\DataTables\CarSubModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.4" />
+</ClassDiagram>

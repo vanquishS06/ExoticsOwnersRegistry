@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ExoticsOwnersRegistry.Models.CarMaker>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.makeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.makeHistory)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.makeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.makeHistory)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.makeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.makeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.makeID })
+        </td>
+    </tr>
+}
+
+</table>

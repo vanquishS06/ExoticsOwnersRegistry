@@ -1,0 +1,106 @@
+﻿@model IEnumerable<ExoticsOwnersRegistry.Models.CarDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.car.VIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.originalFuelSystem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentFuelSystem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.originalExteriorColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.originalInteriorColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentExteriorColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentInteriorColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modelYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deliveryCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deliveryDealership)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentCountryLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentRegionalLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.car.VIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.originalFuelSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentFuelSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.originalExteriorColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.originalInteriorColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentExteriorColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentInteriorColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deliveryCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deliveryDealership)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentCountryLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentRegionalLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.carID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.carID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.carID })
+            </td>
+        </tr>
+    }
+
+</table>

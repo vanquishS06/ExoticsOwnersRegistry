@@ -1,0 +1,34 @@
+﻿@model ExoticsOwnersRegistry.Models.CarMaker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarMaker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.makeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.makeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.makeHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.makeHistory)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.makeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

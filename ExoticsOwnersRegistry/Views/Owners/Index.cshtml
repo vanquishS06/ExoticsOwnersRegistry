@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ExoticsOwnersRegistry.Models.Owner>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ownerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ownerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ownerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hideOwner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ownerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ownerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ownerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hideOwner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ownerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ownerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ownerID })
+        </td>
+    </tr>
+}
+
+</table>

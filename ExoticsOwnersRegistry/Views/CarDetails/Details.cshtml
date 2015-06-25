@@ -1,0 +1,122 @@
+﻿@model ExoticsOwnersRegistry.Models.CarDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.car.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car.VIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.originalFuelSystem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.originalFuelSystem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentFuelSystem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentFuelSystem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.originalExteriorColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.originalExteriorColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.originalInteriorColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.originalInteriorColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentExteriorColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentExteriorColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentInteriorColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentInteriorColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deliveryCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deliveryCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deliveryDealership)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deliveryDealership)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentCountryLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentCountryLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentRegionalLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentRegionalLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.carID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

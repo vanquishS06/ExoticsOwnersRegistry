@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExoticsOwnersRegistry", "ExoticsOwnersRegistry\ExoticsOwnersRegistry.csproj", "{AD7E118D-5DCF-44FC-908D-5A59A6B13B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExoticsOwnersRegistry.Tests", "ExoticsOwnersRegistry.Tests\ExoticsOwnersRegistry.Tests.csproj", "{1EA91128-BFF7-4F4B-B331-CE74612CC865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{F9F225B6-16DE-433E-AA5E-59F7B1D58011}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{923790F8-0BF0-4EEC-B362-7EEBC6EABDCD}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\ExoticsOwnersRegistry-WAWS-dev.json = PublishScripts\Configurations\ExoticsOwnersRegistry-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD7E118D-5DCF-44FC-908D-5A59A6B13B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7E118D-5DCF-44FC-908D-5A59A6B13B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7E118D-5DCF-44FC-908D-5A59A6B13B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7E118D-5DCF-44FC-908D-5A59A6B13B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA91128-BFF7-4F4B-B331-CE74612CC865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA91128-BFF7-4F4B-B331-CE74612CC865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA91128-BFF7-4F4B-B331-CE74612CC865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA91128-BFF7-4F4B-B331-CE74612CC865}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{923790F8-0BF0-4EEC-B362-7EEBC6EABDCD} = {F9F225B6-16DE-433E-AA5E-59F7B1D58011}
+	EndGlobalSection
+EndGlobal

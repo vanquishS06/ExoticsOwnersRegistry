@@ -1,0 +1,42 @@
+﻿@model ExoticsOwnersRegistry.Models.CarSubModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarSubModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carModel.modelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carModel.modelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subModelDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subModelDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.subModelID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
